@@ -29,15 +29,30 @@ const question = document.getElementById("question");
 const answerButtons = document.getElementById("answer-buttons");
 
 displayQuestion();
-
+/**Displays questions and answers */
 function displayQuestion(){
+    hideAnswerButtons();
     let questionIndex = 0;
+    //Creates a variable: a question from all the questions according to its index
     let currentQuestion = questions[questionIndex];
+    //Displays question text
     question.innerHTML = currentQuestion.question;
+    //Loops through answers, getting single answer for each loop inside this function
     currentQuestion.answers.forEach(function (option, index){
+        //Creates buttons for each answer
         const button = document.createElement("button");
         button.innerHTML = option;
         answerButtons.appendChild(button);
     })
     
+}
+/** Hides the default answer buttons
+ * This code is taken from Youtube tutorials:
+ * Great Stack and Web Dev Simplified
+ */
+function hideAnswerButtons() {
+    //loops through answer buttons and removes the child element
+    while (answerButtons.firstChild) {
+        answerButtons.removeChild(answerButtons.firstChild);
+    }
 }
