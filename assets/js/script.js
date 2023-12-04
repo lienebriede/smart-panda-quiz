@@ -165,6 +165,8 @@ function displayQuestion() {
         const button = document.createElement("button");
         button.innerHTML = option;
         answerButtons.appendChild(button);
+        //Adds class for styling
+        button.classList.add("answer_btn");
     });
     //Calls checkAnswer function when clicked
     answerButtons.addEventListener("click", checkAnswer);

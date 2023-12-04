@@ -27,16 +27,16 @@
                 Answer these 15 questions and prove that you are a true East Asia pro!
             </p>
             <div>
-                <button id="play-button">Play Game</button>
+                <button id="play-button" class="btn play_btn">Play Game</button>
             </div>
             <div>
-                <button id="instructions-button">How to play</button>
+                <button id="instructions-button" class="btn instr_btn">How to play</button>
             </div>
         </div>
         <!--Instructions page: hidden, opened and closed with button-->
         <div id="instructions-page" class="page hide">
             <div>
-                <button id="exit-btn"></button>
+                <button id="exit-btn" class="exit_btn"><i class="fa-solid fa-x"></i></button>
             </div>
             <div>
                 <h2>How to play</h2>
@@ -52,34 +52,37 @@
         <!--Quiz page: main page where game is played, hidden at first-->
         <div id="quiz-page" class="page hide">
             <div class="progress">
-                <span id="question-nr">
-                    Question<span id="q-num">0</span>
+                <span id="question-nr" class="q_num">
+                    Question <span id="q-num">0</span>
                 </span>
-                <span id="score">
-                    Your score is<span id="current-score">0</span>
+                <span id="score" class="score">
+                    Your score is <span id="current-score">0</span>
                 </span>
-                <div id="question">
-                    Can you answer this question?
-                </div>
-                <div id="answer-buttons">
-                    <button>Answer 1</button>
-                    <button>Answer 2</button>
-                    <button>Answer 3</button>
-                    <button>Answer 4</button>
-                </div>
-                <!--Note and comment are hidden, opens when user clicks on answers-->
-                <div id="note" class="hide">
-                    <h2>Right!</h2>
-                </div>
-                <div id="comment" class="hide">
-                    <p>The correct answer is Nintendo.</p>
-                </div>
-                <div>
-                    <button id="next-btn" class="hide">Next</button>
-                </div>
+            </div>
+            <div id="question" class="question">
+                Can you answer this question?
+            </div>
+            <div id="answer-buttons">
+                <button class="answer_btn">Answer 1</button>
+                <button class="answer_btn">Answer 2</button>
+                <button class="answer_btn">Answer 3</button>
+                <button class="answer_btn">Answer 4</button>
+            </div>
+            <!--Note and comment are hidden, opens when user clicks on answers-->
+            <div id="note" class="hide">
+                <h2>Right!</h2>
+            </div>
+            <div id="comment" class="hide">
+                <p>The correct answer is Nintendo.</p>
+            </div>
+            <div>
+                <button id="next-btn" class="hide btn next_btn">Next</button>
             </div>
         </div>
     </main>
+    <!--Font Awesome kit-->
+    <script src="https://kit.fontawesome.com/9c41b36590.js" crossorigin="anonymous"></script>
+    <!--Java Script file-->
     <script src="assets/js/script.js"></script>
 </body>
 

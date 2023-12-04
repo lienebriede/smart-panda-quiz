@@ -12,7 +12,6 @@
     --green: #008752;
 }
 
-
 /* General styles */
 body {
     text-align: center;
@@ -49,6 +48,14 @@ img {
     margin-right: auto;
 }
 
+.page {
+    background-color: var(--white);
+    width: 95%;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 10px 10px 20px 10px;
+    border-radius: 15px;
+}
 
 
 .correct {
@@ -57,4 +64,74 @@ img {
 
 .wrong {
     background: var(--red);
+}
+
+.progress {
+    text-transform: uppercase;
+    margin-top: 0;
+    margin-bottom: 40px;
+    background-color: var(--yellow);
+}
+
+.q_num {
+    float: left;
+}
+
+.score {
+    float: right;
+}
+
+.question {
+    margin-bottom: 15px;
+}
+
+/* Button styles */
+.btn,
+.answer_btn {
+    border: 3px solid var(--black);
+    margin-bottom: 5px;
+    font-family: 'Dongle', sans-serif;
+    font-size: 100%;
+    padding-top: 0;
+    padding-bottom: 0;
+}
+
+.btn {
+    width: 45%;
+}
+
+.answer_btn {
+    width: 90%;
+}
+
+.answer_btn:hover:not([disabled]) {
+    background: var(--yellow);
+}
+
+.answer_btn[disabled] {
+    color: var(--black);
+}
+
+.play_btn,
+.next_btn {
+    background-color: var(--blue);
+}
+
+.instr_btn {
+    background-color: var(--yellow);
+}
+
+.exit_btn {
+    border: none;
+    background-color: var(--white);
+    font-size: 1.5rem;
+    float: left;
+}
+
+#note {
+    margin: 10px auto 5px auto;
+}
+
+#comment {
+    margin-bottom: 15px;
 }
