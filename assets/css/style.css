@@ -1,22 +1,60 @@
+/* Google fonts import */
+@import url('https://fonts.googleapis.com/css2?family=Dongle:wght@400;700&display=swap');
+
+/* Colors */
+:root {
+    --black: rgb(0, 0, 0);
+    --darkgrey: #4C4E52;
+    --blue: #6BCAD3;
+    --white: rgb(255, 255, 255);
+    --yellow: rgb(249, 248, 113);
+    --red: #DD4159;
+    --green: #008752;
+}
+
+
 /* General styles */
 body {
     text-align: center;
-    background-color: aquamarine;
-    padding-bottom: 50px;
+    font-family: 'Dongle', sans-serif;
+    font-size: 26px;
+    line-height: 1.5rem;
+    background-color: var(--darkgrey);
 }
 
 .hide {
     display: none;
 }
 
-div {
-    padding-bottom: 30px;
+h1 {
+    color: var(--blue);
+    margin-top: 0;
+    margin-bottom: 10px;
 }
 
+h1,
+h2,
+h3 {
+    text-transform: uppercase;
+}
+
+h3 {
+    color: var(--red)
+}
+
+img {
+    display: block;
+    width: 30%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+
+
 .correct {
-    background: green;
+    background: var(--green);
 }
 
 .wrong {
-    background: red;
+    background: var(--red);
 }
