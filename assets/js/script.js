@@ -30,8 +30,16 @@ const answerButtons = document.getElementById("answer-buttons");
 let questionIndex = 0;
 let currentQuestion = questions[questionIndex];
 const nextButton = document.getElementById("next-btn");
+startGame();
 
-displayQuestion();
+/** Starts the quiz from the first question
+ *  and 0 score  */
+function startGame() {
+    questionIndex = 0;
+    score = 0;
+    displayQuestion();
+}
+
 /** Displays questions and answers */
 function displayQuestion() {
     hideAnswerButtons();
