@@ -22,6 +22,72 @@ const questions = [
         answers: ["Korean", "Cantonese", "Japanese", "Mandarin"],
         correctAnswer: "Japanese",
         comment: "It's Japanese! But if you forget how to say it, just bow!"
+    },
+    {   
+        question: "In which Chinese city can you see the Terracotta Warriors?",
+        answers: ["Harbin", "Xi'an", "Shenzhen", "Shanghai"],
+        correctAnswer: "Xi'an",
+        comment: "It's Xi'an! Xi'an is one of the Chinese Four Great Ancient Capitals besides Beijing, Nanjing and Luoyang."
+    },
+    {   
+        question: "Bibimbap is a popular dish in:",
+        answers: ["Hong Kong", "China", "South Korea", "Japan"],
+        correctAnswer: "South Korea",
+        comment: "It's a famous dish in Korea, of course it's not as famous as Kimchi."
+    },
+    {   
+        question: "How many time zones are there in China?",
+        answers: ["1", "2", "3", "4"],
+        correctAnswer: "1",
+        comment: "It's only 1! Kinda nuts for such a huge country, right?"
+    },
+    {   
+        question: "Which Chinese dialect is most widely spoken in Hong Kong?",
+        answers: ["Mandarin", "Wu", "Cantonese", "Hokkien"],
+        correctAnswer: "Cantonese",
+        comment: "It's Cantonese, which is also spoken in China's Guangdong province."
+    },
+    {   
+        question: "Which district in Tokyo is famous for video games and tech?",
+        answers: ["Akihabara", "Shinjuku", "Pudong", "Gang Nam"],
+        correctAnswer: "Akihabara",
+        comment: "It's Akihabara - a real fun place to visit once you're in Tokyo!"
+    },
+    {   
+        question: "What are chopsticks mostly made of in Korea?",
+        answers: ["Wood", "Plastic", "Metal", "Porcelain"],
+        correctAnswer: "Metal",
+        comment: "It's metal! The good thing about metal chopsticks is that they are reusable. But they are so damn hard to use!"
+    },
+    {   
+        question: "Which city in East Asia does not have a Disneyland?",
+        answers: ["Hong Kong", "Seoul", "Tokyo", "Shanghai"],
+        correctAnswer: "Seoul",
+        comment: "It's Seoul! Did you know that there are two Disney amusement parks in Tokyo - Tokyo Disneyland and Tokyo Disney Sea."
+    },
+    {   
+        question: "Taiwan is most famous for the production of",
+        answers: ["weapons", "cars", "videogames", "microchips"],
+        correctAnswer: "microchips",
+        comment: "It's microchips. 50% of the world's microchips are produced in Taiwan!"
+    },
+    {   
+        question: "Which Martial Art originated in China?",
+        answers: ["Taekwondo", "Kung Fu", "Karate", "Judo"],
+        correctAnswer: "Kung Fu",
+        comment: "It's Kung Fu. Easy to remember! Just think of Kung Fu Panda. Pandas also come from China!"
+    },
+    {   
+        question: "Which ancient Chinese art means wind and water?",
+        answers: ["Tai Chi", "Ying Yang", "Feng Shui", "Dim Sum"],
+        correctAnswer: "Feng Shui",
+        comment: "It's Feng Shui! But I feel like dim sum anyway!"
+    },
+    {   
+        question: "The flag of which country does not have a circle?",
+        answers: ["China", "Japan", "South Korea", "Taiwan"],
+        correctAnswer: "China",
+        comment: "It's China! It only has stars!"
     }
 ];
 
@@ -119,8 +185,17 @@ function checkAnswer(e) {
 function displayScore() {
     // When displaying score, hides buttons
     hideAnswerButtons();
-    // Changes text when finished playing
-    question.innerHTML = `You answered ${score} out of ${questions.length} questions correctly!`;
+    // Displays text when finished playing
+    if (score <= 4) {
+        question.innerHTML = `You answered ${score} out of ${questions.length} questions correctly!
+        You obviously don't know much about East Asia!`;
+    } else  if (score <= 8) {
+        question.innerHTML = `You answered ${score} out of ${questions.length} questions correctly!
+        Not bad! You know your East Asia stuff!`;
+    } else {
+        question.innerHTML = `You answered ${score} out of ${questions.length} questions correctly!
+        Well done!  You're a real East Asia pro!`; 
+    }
     nextButton.innerHTML = "Play again";
 }
 /** Displays next question
