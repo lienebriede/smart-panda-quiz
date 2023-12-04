@@ -122,6 +122,7 @@ function displayQuestion() {
     //This hides the play again button
     nextButton.classList.add("hide");
     note.classList.add("hide");
+    comment.classList.add("hide");
     //Creates a variable: a question from all the questions according to its index
     let currentQuestion = questions[questionIndex];
     //Displays question text
@@ -154,13 +155,16 @@ function incrementQuestionNumber() {
     questionNumber.innerHTML = questionIndex + 1 + "/" + questions.length;
 }
 /** Checks if the clicked answer is equal to to the correct answer,
- * adds classes to display right and wrong answers
+ * adds classes to display right and wrong answers,
+ * displays comment under questions and right/wrong
   */
 function checkAnswer(e) {
     // Creates a variable and adds the event element to it
     const selectedButton = e.target;
     note.classList.remove("hide");
+    comment.classList.remove("hide");
     let currentQuestion = questions[questionIndex];
+    comment.innerHTML = currentQuestion.comment;
     //Checks if the correct answer is the same text as the answer button,
     //Adds classes to correct and wrong to style in CSS
     if (selectedButton.innerHTML === currentQuestion.correctAnswer) {
@@ -192,6 +196,8 @@ function checkAnswer(e) {
 function displayScore() {
     // When displaying score, hides buttons
     hideAnswerButtons();
+    note.classList.add("hide");
+    comment.classList.add("hide");
     // Displays text when finished playing
     if (score <= 4) {
         question.innerHTML = `You answered ${score} out of ${questions.length} questions correctly!
