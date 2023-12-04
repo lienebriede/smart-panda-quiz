@@ -34,7 +34,10 @@ function displayQuestion(){
     let questionIndex = 0;
     let currentQuestion = questions[questionIndex];
     question.innerHTML = currentQuestion.question;
-    const button = document.createElement("button");
-    button.textContent = "Hello!";
-    answerButtons.appendChild(button);
+    currentQuestion.answers.forEach(function (option, index){
+        const button = document.createElement("button");
+        button.innerHTML = option;
+        answerButtons.appendChild(button);
+    })
+    
 }
