@@ -28,19 +28,19 @@ const questions = [
 const question = document.getElementById("question");
 const answerButtons = document.getElementById("answer-buttons");
 let questionIndex = 0;
+let currentQuestion = questions[questionIndex];
 const nextButton = document.getElementById("next-btn");
 
 displayQuestion();
-/**Displays questions and answers */
-function displayQuestion(){
+/** Displays questions and answers */
+function displayQuestion() {
     hideAnswerButtons();
-    let questionIndex = 0;
     //Creates a variable: a question from all the questions according to its index
     let currentQuestion = questions[questionIndex];
     //Displays question text
     question.innerHTML = currentQuestion.question;
     //Loops through answers, getting single answer for each loop inside this function
-    currentQuestion.answers.forEach(function (option, index){
+    currentQuestion.answers.forEach(function (option, index) {
         //Creates buttons for each answer
         const button = document.createElement("button");
         button.innerHTML = option;
@@ -79,13 +79,16 @@ function checkAnswer(e) {
         if (button.innerHTML === currentQuestion.correctAnswer) {
             button.classList.add("correct");
         }
-        //Locks the option to select other answers after choosing one
+        //Locks other answer options after selecting one
         button.disabled = true;
     });
     //Displays next button after clicking on answer
     nextButton.classList.remove("hide");
 }
 
-nextButton.addEventListener("click", ()=> {
-    alert("click");
+nextButton.addEventListener("click", () => {
+    if (questionIndex < questions.length) {
+        questionIndex++;
+        displayQuestion();
+    }
 })
