@@ -28,6 +28,7 @@ const questions = [
 const question = document.getElementById("question");
 const answerButtons = document.getElementById("answer-buttons");
 let questionIndex = 0;
+const nextButton = document.getElementById("next-btn");
 
 displayQuestion();
 /**Displays questions and answers */
@@ -81,4 +82,10 @@ function checkAnswer(e) {
         //Locks the option to select other answers after choosing one
         button.disabled = true;
     });
+    //Displays next button after clicking on answer
+    nextButton.classList.remove("hide");
 }
+
+nextButton.addEventListener("click", ()=> {
+    alert("click");
+})
