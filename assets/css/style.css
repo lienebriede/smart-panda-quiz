@@ -57,7 +57,6 @@ img {
     border-radius: 15px;
 }
 
-
 .correct {
     background: var(--green);
 }
@@ -138,4 +137,66 @@ img {
 
 .gif {
     margin-bottom: 15px;
+}
+
+/* Media query: tablets and larger (768px and up) */
+@media screen and (min-width: 768px) {
+    .page {
+        width: 80%;
+        padding: 30px 30px 30px 30px;
+    }
+
+    body {
+        font-size: 2.5rem;
+        line-height: 2.5rem;
+    }
+
+    h1 {
+        font-size: 6rem;
+        margin-top: 10px;
+        margin-bottom: 30px;
+    }
+
+    img {
+        margin-top: 30px;
+        width: 20%;
+    }
+
+    .question {
+        margin-top: 70px;
+        margin-bottom: 50px;
+    }
+
+    .gif {
+        height: 250px;
+        width: auto;
+        margin-bottom: 0;
+    }
+}
+
+/* Large devices (laptops and desktops, 992px and up) */
+@media screen and (min-width: 992px) {
+    .page {
+        width: 40%;
+    }
+
+    body {
+        font-size: 2rem;
+        line-height: 1.8rem;
+    }
+
+    h1 {
+        font-size: 4.5rem;
+    }
+
+    img {
+        margin-top: 30px;
+        width: 10%;
+    }
+
+    .question {
+        margin-top: 50px;
+        margin-bottom: 30px;
+    }
+
 }
