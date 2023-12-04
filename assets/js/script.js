@@ -98,6 +98,9 @@ let currentQuestion = questions[questionIndex];
 const nextButton = document.getElementById("next-btn");
 let score = 0;
 let currentScore = document.getElementById("current-score");
+const note = document.getElementById("note");
+const comment = document.getElementById("comment");
+
 
 startGame();
 
@@ -118,6 +121,7 @@ function displayQuestion() {
     incrementQuestionNumber();
     //This hides the play again button
     nextButton.classList.add("hide");
+    note.classList.add("hide");
     //Creates a variable: a question from all the questions according to its index
     let currentQuestion = questions[questionIndex];
     //Displays question text
@@ -155,6 +159,7 @@ function incrementQuestionNumber() {
 function checkAnswer(e) {
     // Creates a variable and adds the event element to it
     const selectedButton = e.target;
+    note.classList.remove("hide");
     let currentQuestion = questions[questionIndex];
     //Checks if the correct answer is the same text as the answer button,
     //Adds classes to correct and wrong to style in CSS
@@ -164,8 +169,10 @@ function checkAnswer(e) {
         score++;
         //Displays current score
         currentScore.innerHTML = `${score}`; 
+        note.innerHTML = "RIGHT!";
     } else {
         selectedButton.classList.add("wrong");
+        note.innerHTML = "WRONG!";
     }
     //Checks and displays the correct answer when user clicks the answer button
     //Code from Youtube tutorial from Great Stack
