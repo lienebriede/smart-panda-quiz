@@ -31,6 +31,7 @@ let questionIndex = 0;
 let currentQuestion = questions[questionIndex];
 const nextButton = document.getElementById("next-btn");
 let score = 0;
+let currentScore = document.getElementById("current-score");
 
 startGame();
 
@@ -39,6 +40,9 @@ startGame();
 function startGame() {
     questionIndex = 0;
     score = 0;
+    currentScore.innerHTML = 0;
+    //Otherwise it will say "play again" after restarting
+    nextButton.innerHTML = "Next";
     displayQuestion();
 }
 
@@ -46,6 +50,8 @@ function startGame() {
 function displayQuestion() {
     hideAnswerButtons();
     incrementQuestionNumber();
+    //This hides the play again button
+    nextButton.classList.add("hide");
     //Creates a variable: a question from all the questions according to its index
     let currentQuestion = questions[questionIndex];
     //Displays question text
@@ -90,6 +96,8 @@ function checkAnswer(e) {
         selectedButton.classList.add("correct");
         //Adds to score
         score++;
+        //Displays current score
+        currentScore.innerHTML = `${score}`; 
     } else {
         selectedButton.classList.add("wrong");
     }
