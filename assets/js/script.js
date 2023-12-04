@@ -72,4 +72,13 @@ function checkAnswer(e) {
     } else {
         selectedButton.classList.add("wrong");
     }
+    //Checks and displays the correct answer when user clicks the answer button
+    //Code from Youtube tutorial from Great Stack
+    Array.from(answerButtons.children).forEach(button => {
+        if (button.innerHTML === currentQuestion.correctAnswer) {
+            button.classList.add("correct");
+        }
+        //Locks the option to select other answers after choosing one
+        button.disabled = true;
+    });
 }
