@@ -105,17 +105,25 @@ const startPage = document.getElementById("start-page");
 const quizPage = document.getElementById("quiz-page");
 const instructionsButton = document.getElementById("instructions-button");
 const instructionsPage = document.getElementById("instructions-page");
+const exitButton = document.getElementById("exit-btn");
 
-
+//Calls to start quiz
 playButton.addEventListener("click", () => {
     startGame();
 })
-
+//Calls to open instructions
 instructionsButton.addEventListener("click", openInstructions);
 
+/** Opens and hides
+ * instructions */
 function openInstructions() {
     instructionsPage.classList.remove("hide");
 startPage.classList.add("hide");
+//Closes instructions 
+exitButton.addEventListener("click", () => {
+    instructionsPage.classList.add("hide");
+    startPage.classList.remove("hide");
+})
 }
 
 /** Starts the quiz from the first question
