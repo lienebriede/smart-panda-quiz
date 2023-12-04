@@ -30,6 +30,8 @@ const answerButtons = document.getElementById("answer-buttons");
 let questionIndex = 0;
 let currentQuestion = questions[questionIndex];
 const nextButton = document.getElementById("next-btn");
+let score = 0;
+
 startGame();
 
 /** Starts the quiz from the first question
@@ -86,6 +88,8 @@ function checkAnswer(e) {
     Array.from(answerButtons.children).forEach(button => {
         if (button.innerHTML === currentQuestion.correctAnswer) {
             button.classList.add("correct");
+            //Adds to score
+            score++;
         }
         //Locks other answer options after selecting one
         button.disabled = true;
@@ -94,9 +98,28 @@ function checkAnswer(e) {
     nextButton.classList.remove("hide");
 }
 
+/** Displays next question
+ * or calls display score function if all questions are displayed
+ */
+function handleNextButton() {
+    // Updates question index
+    questionIndex++;
+    // Displays question in a loop
+    if(questionIndex < questions.length) {
+        displayQuestion(); 
+        // Displays score if there are no new questions
+    } else {
+        displayScore();
+    }
+}
+/** Displays next question after 
+ * clicking button until there are no more questions
+ **/
 nextButton.addEventListener("click", () => {
     if (questionIndex < questions.length) {
-        questionIndex++;
-        displayQuestion();
+        handleNextButton();
+        // Restarts the game after all questions have been displayed
+    } else {
+    startGame();
     }
 })
