@@ -1,0 +1,10 @@
+/* General styles */
+body {
+    text-align: center;
+    background-color: aquamarine;
+    padding-bottom: 50px;
+}
+
+div {
+    padding-bottom: 30px;
+}
