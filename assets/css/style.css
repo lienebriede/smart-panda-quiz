@@ -8,3 +8,11 @@ body {
 div {
     padding-bottom: 30px;
 }
+
+.correct {
+    background: green;
+}
+
+.wrong {
+    background: red;
+}

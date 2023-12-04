@@ -27,6 +27,7 @@ const questions = [
 
 const question = document.getElementById("question");
 const answerButtons = document.getElementById("answer-buttons");
+let questionIndex = 0;
 
 displayQuestion();
 /**Displays questions and answers */
@@ -43,8 +44,9 @@ function displayQuestion(){
         const button = document.createElement("button");
         button.innerHTML = option;
         answerButtons.appendChild(button);
-    })
-    
+    });
+    //Calls checkAnswer function when clicked
+    answerButtons.addEventListener("click", checkAnswer);
 }
 /** Hides the default answer buttons
  * This code is taken from Youtube tutorials:
@@ -54,5 +56,20 @@ function hideAnswerButtons() {
     //loops through answer buttons and removes the child element
     while (answerButtons.firstChild) {
         answerButtons.removeChild(answerButtons.firstChild);
+    }
+}
+/** Checks if the clicked answer is equal to to the correct answer,
+ * adds classes to display right and wrong answers
+  */
+function checkAnswer(e) {
+    // Creates a variable and adds the event element to it
+    const selectedButton = e.target;
+    let currentQuestion = questions[questionIndex];
+    //Checks if the correct answer is the same text as the answer button,
+    //Adds classes to correct and wrong to style in CSS
+    if (selectedButton.innerHTML === currentQuestion.correctAnswer) {
+        selectedButton.classList.add("correct");
+    } else {
+        selectedButton.classList.add("wrong");
     }
 }
