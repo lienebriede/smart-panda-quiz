@@ -103,12 +103,20 @@ const comment = document.getElementById("comment");
 const playButton = document.getElementById("play-button");
 const startPage = document.getElementById("start-page");
 const quizPage = document.getElementById("quiz-page");
+const instructionsButton = document.getElementById("instructions-button");
+const instructionsPage = document.getElementById("instructions-page");
 
 
 playButton.addEventListener("click", () => {
     startGame();
 })
 
+instructionsButton.addEventListener("click", openInstructions);
+
+function openInstructions() {
+    instructionsPage.classList.remove("hide");
+startPage.classList.add("hide");
+}
 
 /** Starts the quiz from the first question
  *  and 0 score  */
