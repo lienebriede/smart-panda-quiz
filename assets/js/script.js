@@ -144,6 +144,10 @@ function startGame() {
     nextButton.innerHTML = "Next";
     quizPage.classList.remove("hide");
     startPage.classList.add("hide");
+    gif1.classList.add("hide");
+    gif2.classList.add("hide");
+    gif3.classList.add("hide");
+    gif4.classList.add("hide");
     displayQuestion();
 }
 
@@ -236,12 +240,16 @@ function displayScore() {
     if (score <= 4) {
         question.innerHTML = `You answered ${score} out of ${questions.length} questions correctly!
         You obviously don't know much about East Asia!`;
+        gif3.classList.remove("hide");
     } else  if (score <= 8) {
         question.innerHTML = `You answered ${score} out of ${questions.length} questions correctly!
         Not bad! You know your East Asia stuff!`;
+        gif1.classList.remove("hide");
     } else {
         question.innerHTML = `You answered ${score} out of ${questions.length} questions correctly!
         Well done!  You're a real East Asia pro!`; 
+        gif2.classList.remove("hide");
+        gif4.classList.remove("hide");
     }
     nextButton.innerHTML = "Play again";
 }
