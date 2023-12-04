@@ -45,6 +45,7 @@ function startGame() {
 /** Displays questions and answers */
 function displayQuestion() {
     hideAnswerButtons();
+    incrementQuestionNumber();
     //Creates a variable: a question from all the questions according to its index
     let currentQuestion = questions[questionIndex];
     //Displays question text
@@ -68,6 +69,13 @@ function hideAnswerButtons() {
     while (answerButtons.firstChild) {
         answerButtons.removeChild(answerButtons.firstChild);
     }
+}
+/** Numbers questions starting from 1
+ * displays adding 1 to every question
+ */
+function incrementQuestionNumber() {
+    let questionNumber = document.getElementById("q-num");
+    questionNumber.innerHTML = questionIndex + 1 + "/" + questions.length;
 }
 /** Checks if the clicked answer is equal to to the correct answer,
  * adds classes to display right and wrong answers
