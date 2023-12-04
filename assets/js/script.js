@@ -100,9 +100,15 @@ let score = 0;
 let currentScore = document.getElementById("current-score");
 const note = document.getElementById("note");
 const comment = document.getElementById("comment");
+const playButton = document.getElementById("play-button");
+const startPage = document.getElementById("start-page");
+const quizPage = document.getElementById("quiz-page");
 
 
-startGame();
+playButton.addEventListener("click", () => {
+    startGame();
+})
+
 
 /** Starts the quiz from the first question
  *  and 0 score  */
@@ -112,6 +118,8 @@ function startGame() {
     currentScore.innerHTML = 0;
     //Otherwise it will say "play again" after restarting
     nextButton.innerHTML = "Next";
+    quizPage.classList.remove("hide");
+    startPage.classList.add("hide");
     displayQuestion();
 }
 
