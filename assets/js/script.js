@@ -80,6 +80,8 @@ function checkAnswer(e) {
     //Adds classes to correct and wrong to style in CSS
     if (selectedButton.innerHTML === currentQuestion.correctAnswer) {
         selectedButton.classList.add("correct");
+        //Adds to score
+        score++;
     } else {
         selectedButton.classList.add("wrong");
     }
@@ -88,8 +90,6 @@ function checkAnswer(e) {
     Array.from(answerButtons.children).forEach(button => {
         if (button.innerHTML === currentQuestion.correctAnswer) {
             button.classList.add("correct");
-            //Adds to score
-            score++;
         }
         //Locks other answer options after selecting one
         button.disabled = true;
@@ -97,7 +97,16 @@ function checkAnswer(e) {
     //Displays next button after clicking on answer
     nextButton.classList.remove("hide");
 }
-
+/** Displays score at the end of the game
+ * displays play again button that restarts the game
+ */
+function displayScore() {
+    // When displaying score, hides buttons
+    hideAnswerButtons();
+    // Changes text when finished playing
+    question.innerHTML = `You answered ${score} out of ${questions.length} questions correctly!`;
+    nextButton.innerHTML = "Play again";
+}
 /** Displays next question
  * or calls display score function if all questions are displayed
  */
