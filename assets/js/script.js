@@ -106,6 +106,14 @@ const quizPage = document.getElementById("quiz-page");
 const instructionsButton = document.getElementById("instructions-button");
 const instructionsPage = document.getElementById("instructions-page");
 const exitButton = document.getElementById("exit-btn");
+const header = document.getElementById("header");
+
+//Calls to go to the start page
+header.addEventListener("click", () => {
+    quizPage.classList.add("hide");
+    startPage.classList.remove("hide");
+    instructionsPage.classList.add("hide");
+} )
 
 //Calls to start quiz
 playButton.addEventListener("click", () => {
