@@ -128,11 +128,11 @@ img {
     float: left;
 }
 
-#note {
+.note {
     margin: 10px auto 5px auto;
 }
 
-#comment {
+.comment {
     margin-bottom: 15px;
 }
 
