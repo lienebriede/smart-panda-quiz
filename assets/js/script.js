@@ -26,6 +26,7 @@ const questions = [
 ];
 
 const question = document.getElementById("question");
+const answerButtons = document.getElementById("answer-buttons");
 
 displayQuestion();
 
@@ -33,4 +34,7 @@ function displayQuestion(){
     let questionIndex = 0;
     let currentQuestion = questions[questionIndex];
     question.innerHTML = currentQuestion.question;
+    const button = document.createElement("button");
+    button.textContent = "Hello!";
+    answerButtons.appendChild(button);
 }
