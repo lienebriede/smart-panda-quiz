@@ -24,3 +24,13 @@ const questions = [
         comment: "It's Japanese! But if you forget how to say it, just bow!"
     }
 ];
+
+const question = document.getElementById("question");
+
+displayQuestion();
+
+function displayQuestion(){
+    let questionIndex = 0;
+    let currentQuestion = questions[questionIndex];
+    question.innerHTML = currentQuestion.question;
+}
