@@ -94,7 +94,7 @@ const questions = [
 const question = document.getElementById("question");
 const answerButtons = document.getElementById("answer-buttons");
 let questionIndex = 0;
-let currentQuestion = questions[questionIndex];
+//let currentQuestion = questions[questionIndex];
 const nextButton = document.getElementById("next-btn");
 let score = 0;
 let currentScore = document.getElementById("current-score");
@@ -113,12 +113,12 @@ header.addEventListener("click", () => {
     quizPage.classList.add("hide");
     startPage.classList.remove("hide");
     instructionsPage.classList.add("hide");
-} )
+});
 
 //Calls to start quiz
 playButton.addEventListener("click", () => {
     startGame();
-})
+});
 //Calls to open instructions
 instructionsButton.addEventListener("click", openInstructions);
 
@@ -131,7 +131,7 @@ startPage.classList.add("hide");
 exitButton.addEventListener("click", () => {
     instructionsPage.classList.add("hide");
     startPage.classList.remove("hide");
-})
+});
 }
 
 /** Starts the quiz from the first question
@@ -277,4 +277,4 @@ nextButton.addEventListener("click", () => {
     } else {
     startGame();
     }
-})
+});
