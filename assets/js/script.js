@@ -23,67 +23,67 @@ const questions = [
         correctAnswer: "Japanese",
         comment: "It's Japanese! But if you forget how to say it, just bow!"
     },
-    {   
+    {
         question: "In which Chinese city can you see the Terracotta Warriors?",
         answers: ["Harbin", "Xi'an", "Shenzhen", "Shanghai"],
         correctAnswer: "Xi'an",
         comment: "It's Xi'an! Xi'an is one of the Chinese Four Great Ancient Capitals besides Beijing, Nanjing and Luoyang."
     },
-    {   
+    {
         question: "Bibimbap is a popular dish in:",
         answers: ["Hong Kong", "China", "South Korea", "Japan"],
         correctAnswer: "South Korea",
         comment: "It's a famous dish in Korea, of course it's not as famous as Kimchi."
     },
-    {   
+    {
         question: "How many time zones are there in China?",
         answers: ["1", "2", "3", "4"],
         correctAnswer: "1",
         comment: "It's only 1! Kinda nuts for such a huge country, right?"
     },
-    {   
+    {
         question: "Which Chinese dialect is most widely spoken in Hong Kong?",
         answers: ["Mandarin", "Wu", "Cantonese", "Hokkien"],
         correctAnswer: "Cantonese",
         comment: "It's Cantonese, which is also spoken in China's Guangdong province."
     },
-    {   
+    {
         question: "Which district in Tokyo is famous for video games and tech?",
         answers: ["Akihabara", "Shinjuku", "Pudong", "Gang Nam"],
         correctAnswer: "Akihabara",
         comment: "It's Akihabara - a real fun place to visit once you're in Tokyo!"
     },
-    {   
+    {
         question: "What are chopsticks mostly made of in Korea?",
         answers: ["Wood", "Plastic", "Metal", "Porcelain"],
         correctAnswer: "Metal",
         comment: "It's metal! The good thing about metal chopsticks is that they are reusable. But they are so damn hard to use!"
     },
-    {   
+    {
         question: "Which city in East Asia does not have a Disneyland?",
         answers: ["Hong Kong", "Seoul", "Tokyo", "Shanghai"],
         correctAnswer: "Seoul",
         comment: "It's Seoul! Did you know that there are two Disney amusement parks in Tokyo - Tokyo Disneyland and Tokyo Disney Sea."
     },
-    {   
+    {
         question: "Taiwan is most famous for the production of",
         answers: ["weapons", "cars", "videogames", "microchips"],
         correctAnswer: "microchips",
         comment: "It's microchips. 50% of the world's microchips are produced in Taiwan!"
     },
-    {   
+    {
         question: "Which Martial Art originated in China?",
         answers: ["Taekwondo", "Kung Fu", "Karate", "Judo"],
         correctAnswer: "Kung Fu",
         comment: "It's Kung Fu. Easy to remember! Just think of Kung Fu Panda. Pandas also come from China!"
     },
-    {   
+    {
         question: "Which ancient Chinese art means wind and water?",
         answers: ["Tai Chi", "Ying Yang", "Feng Shui", "Dim Sum"],
         correctAnswer: "Feng Shui",
         comment: "It's Feng Shui! But I feel like dim sum anyway!"
     },
-    {   
+    {
         question: "The flag of which country does not have a circle?",
         answers: ["China", "Japan", "South Korea", "Taiwan"],
         correctAnswer: "China",
@@ -94,7 +94,6 @@ const questions = [
 const question = document.getElementById("question");
 const answerButtons = document.getElementById("answer-buttons");
 let questionIndex = 0;
-//let currentQuestion = questions[questionIndex];
 const nextButton = document.getElementById("next-btn");
 let score = 0;
 let currentScore = document.getElementById("current-score");
@@ -107,6 +106,11 @@ const instructionsButton = document.getElementById("instructions-button");
 const instructionsPage = document.getElementById("instructions-page");
 const exitButton = document.getElementById("exit-btn");
 const header = document.getElementById("header");
+const gif1 = document.getElementById("gif1");
+const gif2 = document.getElementById("gif2");
+const gif3 = document.getElementById("gif3");
+const gif4 = document.getElementById("gif4");
+
 
 //Calls to go to the start page
 header.addEventListener("click", () => {
@@ -119,6 +123,7 @@ header.addEventListener("click", () => {
 playButton.addEventListener("click", () => {
     startGame();
 });
+
 //Calls to open instructions
 instructionsButton.addEventListener("click", openInstructions);
 
@@ -126,12 +131,12 @@ instructionsButton.addEventListener("click", openInstructions);
  * instructions */
 function openInstructions() {
     instructionsPage.classList.remove("hide");
-startPage.classList.add("hide");
-//Closes instructions 
-exitButton.addEventListener("click", () => {
-    instructionsPage.classList.add("hide");
-    startPage.classList.remove("hide");
-});
+    startPage.classList.add("hide");
+    //Closes instructions 
+    exitButton.addEventListener("click", () => {
+        instructionsPage.classList.add("hide");
+        startPage.classList.remove("hide");
+    });
 }
 
 /** Starts the quiz from the first question
@@ -175,6 +180,7 @@ function displayQuestion() {
     //Calls checkAnswer function when clicked
     answerButtons.addEventListener("click", checkAnswer);
 }
+
 /** Hides the default answer buttons
  * This code is taken from Youtube tutorials:
  * Great Stack and Web Dev Simplified
@@ -185,6 +191,7 @@ function hideAnswerButtons() {
         answerButtons.removeChild(answerButtons.firstChild);
     }
 }
+
 /** Numbers questions starting from 1
  * displays adding 1 to every question
  */
@@ -192,6 +199,7 @@ function incrementQuestionNumber() {
     let questionNumber = document.getElementById("q-num");
     questionNumber.innerHTML = questionIndex + 1 + "/" + questions.length;
 }
+
 /** Checks if the clicked answer is equal to to the correct answer,
  * adds classes to display right and wrong answers,
  * displays comment under questions and right/wrong
@@ -210,7 +218,7 @@ function checkAnswer(e) {
         //Adds to score
         score++;
         //Displays current score
-        currentScore.innerHTML = `${score}`; 
+        currentScore.innerHTML = `${score}`;
         note.innerHTML = "RIGHT!";
     } else {
         selectedButton.classList.add("wrong");
@@ -228,6 +236,7 @@ function checkAnswer(e) {
     //Displays next button after clicking on answer
     nextButton.classList.remove("hide");
 }
+
 /** Displays score at the end of the game
  * displays play again button that restarts the game
  */
@@ -241,18 +250,19 @@ function displayScore() {
         question.innerHTML = `You answered ${score} out of ${questions.length} questions correctly!
         You obviously don't know much about East Asia!`;
         gif3.classList.remove("hide");
-    } else  if (score <= 8) {
+    } else if (score <= 8) {
         question.innerHTML = `You answered ${score} out of ${questions.length} questions correctly!
         Not bad! You know your East Asia stuff!`;
         gif1.classList.remove("hide");
     } else {
         question.innerHTML = `You answered ${score} out of ${questions.length} questions correctly!
-        Well done!  You're a real East Asia pro!`; 
+        Well done!  You're a real East Asia pro!`;
         gif2.classList.remove("hide");
         gif4.classList.remove("hide");
     }
     nextButton.innerHTML = "Play again";
 }
+
 /** Displays next question
  * or calls display score function if all questions are displayed
  */
@@ -260,13 +270,14 @@ function handleNextButton() {
     // Updates question index
     questionIndex++;
     // Displays question in a loop
-    if(questionIndex < questions.length) {
-        displayQuestion(); 
+    if (questionIndex < questions.length) {
+        displayQuestion();
         // Displays score if there are no new questions
     } else {
         displayScore();
     }
 }
+
 /** Displays next question after 
  * clicking button until there are no more questions
  **/
@@ -275,6 +286,6 @@ nextButton.addEventListener("click", () => {
         handleNextButton();
         // Restarts the game after all questions have been displayed
     } else {
-    startGame();
+        startGame();
     }
 });
