@@ -139,17 +139,17 @@ Before the web development process all pages were designed using [Balsamiq](http
 - The Website was tested using Google Chrome Lighthouse Tool. The Accessability score on both mobile and desktop version is 100.
 
     Results for mobile version
-<img src="documentation/mobile_perf.png" width=100%> 
+<img src="documentation/mob_perf.png" width=100%> 
 
     Results for desktop version
-<img src="documentation/desktop_perf.png" width=100%> 
+<img src="documentation/desk_perf.png" width=100%> 
 
 
 - Friends were asked to review the site and give feedback.
 
 ## Bugs
 
-While testing a bug was found in the code. It is most obvious in the desktop version. If the user clicks somewhere between the buttons, the whole button area turns red. This is due to targeting the whole answer buttons div in JavaScript code when adding the event listener to the answer buttons. The even listener should target each button rather than the whole div. This bug is not noticable on mobile devices, as the area between the buttons is too small to click, although it is still there.
+While testing, a bug was found in the code. It is most obvious in the desktop version. If the user clicks somewhere between the buttons, the whole button area turns red. This is due to targeting the whole answer buttons div in JavaScript code when adding the event listener to the answer buttons. The event listener should target each button rather than the whole div. This bug is not noticable on mobile devices, as the area between the buttons is too small to click, although it is still there.
 
 ## Deployment
 
