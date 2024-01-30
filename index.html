@@ -20,12 +20,14 @@
 <body>
     <main>
         <header id="header">
-            <img src="assets/images/panda.png" alt="drawing of panda with laptop">
-            <h1>Smart panda</h1>
+            <figure>
+                <img src="assets/images/panda.png" alt="drawing of panda with laptop">
+                <h1>Smart panda</h1>
+            </figure>
         </header>
         <!--Pages: Start, Instructions, Quiz-->
         <!--Start page: opens first, is hidden when game starts-->
-        <div id="start-page" class="page">
+        <section id="start-page" class="page">
             <p>
                 Are you a K-pop fan? Do you like Japanese anime?
                 Love drinking boba?</p>
@@ -40,9 +42,9 @@
             <div>
                 <button id="instructions-button" class="btn instr_btn">How to play</button>
             </div>
-        </div>
+        </section>
         <!--Instructions page: hidden, open and close with button-->
-        <div id="instructions-page" class="page hide">
+        <section id="instructions-page" class="page hide">
             <div>
                 <button id="exit-btn" class="exit_btn"><i class="fa-solid fa-x"></i></button>
             </div>
@@ -56,9 +58,9 @@
                     Good luck<br>and<br>have fun!
                 </h3>
             </div>
-        </div>
+        </section>
         <!--Quiz page: main page where game is played, hidden at first-->
-        <div id="quiz-page" class="page hide">
+        <section id="quiz-page" class="page hide">
             <div class="progress">
                 <span id="question-nr" class="q_num">
                     Question <span id="q-num">0</span>
@@ -75,12 +77,7 @@
             <div id="question" class="question">
                 Can you answer this question?
             </div>
-            <div id="answer-buttons">
-                <button class="answer_btn">Answer 1</button>
-                <button class="answer_btn">Answer 2</button>
-                <button class="answer_btn">Answer 3</button>
-                <button class="answer_btn">Answer 4</button>
-            </div>
+            <div id="answer-buttons">&nbsp;</div>
             <!--Note and comment are hidden, opens when user clicks on answers-->
             <div id="note" class="hide note">
                 <h2>Right!</h2>
@@ -91,7 +88,7 @@
             <div>
                 <button id="next-btn" class="hide btn next_btn">Next</button>
             </div>
-        </div>
+        </section>
     </main>
     <!--Font Awesome kit-->
     <script src="https://kit.fontawesome.com/9c41b36590.js" crossorigin="anonymous"></script>

@@ -176,9 +176,10 @@ function displayQuestion() {
         answerButtons.appendChild(button);
         //Adds class for styling
         button.classList.add("answer_btn");
+
+        //This fixes the bug!! Listens to every button separstely
+        button.addEventListener("click", checkAnswer);
     });
-    //Calls checkAnswer function when clicked
-    answerButtons.addEventListener("click", checkAnswer);
 }
 
 /** Hides the default answer buttons
